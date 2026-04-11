@@ -13,6 +13,6 @@ class TransactionSerializer(serializers.ModelSerializer):
 	category = serializers.SlugRelatedField(read_only=True, slug_field='name')
 	class Meta:
 		model = Transaction
-		fields = '__all__'
+		exclude = ['id', 'updated_timestamp']
 		read_only_fields = ['user', 'updated_timestamp']
 
