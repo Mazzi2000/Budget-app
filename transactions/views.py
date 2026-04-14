@@ -19,4 +19,4 @@ def transactionFunView(request):
 		if serializer.is_valid():
 			serializer.save(user=request.user)
 			return Response(serializer.data)
-		return Response(serializer.error)
+		return Response(serializer.errors)
